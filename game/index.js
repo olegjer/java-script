@@ -65,7 +65,6 @@ if (user==pc){
   } else if (user == "rock" && pc == "scissors"){
     console.log("win")
   } else "lose"  
-  console.log("lose")
      
  }
 
