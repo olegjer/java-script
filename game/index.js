@@ -49,17 +49,25 @@ function checkWinner(user) {
 
   pUserEl.innerHTML = user;
   pPcEl.innerHTML = pc;
+  
 
   // Paper covers Rock.
   // Scissors cut Paper.
   // Key concepts for this challenge exercise:
 
-  if (user == "paper" && pc == "rock") {
+if (user==pc){
+    console.log("draw")
+  }
+   else if (user == "paper" && pc == "rock") {
     console.log("win");
   } else if (user == "scissors" && pc == "paper") {
     console.log("win");
-  }
-}
+  } else if (user == "rock" && pc == "scissors"){
+    console.log("win")
+  } else "lose"  
+  console.log("lose")
+     
+ }
 
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
