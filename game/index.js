@@ -25,6 +25,7 @@ const paperEl = document.querySelector(".Paper");
 const pUserEl = document.querySelector(".user_choise");
 const pPcEl = document.querySelector(".pc_choise");
 const pResultEl = document.querySelector(".result");
+
 console.log(pUserEl, pPcEl, pResultEl);
 
 const variants = ["rock", "scissors", "paper"];
@@ -49,24 +50,28 @@ function checkWinner(user) {
 
   pUserEl.innerHTML = user;
   pPcEl.innerHTML = pc;
-  
 
   // Paper covers Rock.
   // Scissors cut Paper.
   // Key concepts for this challenge exercise:
 
-if (user==pc){
-    console.log("draw")
-  }
-   else if (user == "paper" && pc == "rock") {
+  if (user == pc) {
+    console.log("draw");
+    pResultEl.innerHTML = "draw"
+  } else if (user == "paper" && pc == "rock") {
     console.log("win");
+    pResultEl.innerHTML = "win"
   } else if (user == "scissors" && pc == "paper") {
     console.log("win");
-  } else if (user == "rock" && pc == "scissors"){
-    console.log("win")
-  } else "lose"  
-     
- }
+    pResultEl.innerHTML = "win"
+  } else if (user == "rock" && pc == "scissors") {
+    console.log("win");
+    pResultEl.innerHTML = "win"
+  } else {
+    console.log("lose");
+    pResultEl.innerHTML = "You are the looser, Ha-ha-ha."
+  }
+}
 
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
